@@ -25,4 +25,12 @@ public class TicTacToeSpec {
         ticTacToe.play(5, 2);
     }
 
+    /**
+     * 棋子放在超出Y轴边界时，引发 RuntimeException
+     */
+    @Test
+    public void whenYOutsideBoardThenRuntimeException() {
+        exception.expect(RuntimeException.class);
+        ticTacToe.play(2, 5);
+    }
 }
