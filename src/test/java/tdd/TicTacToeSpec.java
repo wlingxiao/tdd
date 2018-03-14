@@ -33,4 +33,14 @@ public class TicTacToeSpec {
         exception.expect(RuntimeException.class);
         ticTacToe.play(2, 5);
     }
+
+    /**
+     * 棋子放在已被占用的位置时，将引发 RuntimeException
+     */
+    @Test
+    public void whenOccupiedThenRuntimeException() {
+        ticTacToe.play(2, 1);
+        exception.expect(RuntimeException.class);
+        ticTacToe.play(2, 1);
+    }
 }
